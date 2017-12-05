@@ -1,6 +1,25 @@
 <html>
 <head>
     <meta property="og:url" content="https://cdigginsaltsrc.github.io/demo/og-test.html" />
+	
+	<script type="text/javascript">
+		function getParameterByName(name, url) {
+			if (!url) url = window.location.href;
+			name = name.replace(/[\[\]]/g, "\\$&");
+			var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+				results = regex.exec(url);
+			if (!results) return null;
+			if (!results[2]) return '';
+			return decodeURIComponent(results[2].replace(/\+/g, " "));
+		}
+
+		//pull the referredBy param from query string
+		var referredBy = getParameterByName("referredBy");
+		debugger;
+		
+		//redirect to local using the referredBy param
+		window.location.href = "http://shopping.localmachine.altsrc.net/Shopping/StartForNewCustomerDirectReferral?referredBy=" + referredBy;
+	</script>
 </head>
 <body>
 	This is the body of a test page
