@@ -31,7 +31,7 @@
 		var referredBy = getParameterByName("referredBy");
 		
 		//redirect to local using the referredBy param
-		if(referredBy != ""){
+		if(referredBy && referredBy != null && referredBy != ""){
 			window.location.href = "http://shopping.localmachine.altsrc.net/Shopping/StartForNewCustomerDirectReferral?referredBy=" + referredBy;
 		}
 	</script>
