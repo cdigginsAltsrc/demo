@@ -1,0 +1,41 @@
+<html>
+<head>
+	<meta property="og:url" content="https://cdigginsaltsrc.github.io/demo/fake-shopping.html" />
+	<meta property="fb:app_id" content="2021669058117445" />
+	<meta property="og:type" content="website" />
+    <meta property="og:title" content="I'd like to Refer You!" />
+    <meta property="og:image" content="https://cdigginsaltsrc.github.io/demo/Facebook_10.png" />
+    <meta property="og:site_name" content="Consumer Cellular" />
+    <meta property="og:description" content="Sign up to get a $20 Bonus." />
+	
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="I'd like to Refer You!" />
+	<meta name="twitter:domain" content="consumercellular.com" />
+	<meta name="twitter:image" content="https://cdigginsaltsrc.github.io/demo/Twitter_10.png" />
+	<meta name="twitter:description" content="Sign up and get a $10 Bonus." />
+	
+	<script type="text/javascript">
+		function getParameterByName(name, url) {
+			if (!url) url = window.location.href;
+			name = name.replace(/[\[\]]/g, "\\$&");
+			var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+				results = regex.exec(url);
+			if (!results) return null;
+			if (!results[2]) return '';
+			return decodeURIComponent(results[2].replace(/\+/g, " "));
+		}
+
+		//pull the referredBy param from query string
+		var referredBy = getParameterByName("referredBy");
+		
+		//redirect to local using the referredBy param
+		if(referredBy && referredBy != null && referredBy != ""){
+			//window.location.href = "http://shopping.localmachine.altsrc.net/Shopping/StartForNewCustomerDirectReferral?referredBy=" + referredBy;
+			window.location.href = "http://x1.shopping-dev.altsrc.net/Shopping/StartForNewCustomerDirectReferral?referredBy=" + referredBy;
+		}
+	</script>
+</head>
+<body>
+	This is the test page that would be the /Shopping/StartForNewCustomerDirectReferral response, which would give the metadata needed to populate Facebook and Twitter posts.
+</body>
+</html>
